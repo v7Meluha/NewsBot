@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.use(express.json());
 
-/*app.post("/", (req, res) => {
+app.post("/", (req, res) => {
   var action = req.body.queryResult.action;
   var params = req.body.queryResult.parameters;
   var news = Bot.getResponse(action, params)
@@ -18,11 +18,9 @@ app.use(express.json());
     .catch(function(err) {
       res.json(err);
     });
-});*/
-
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+
 
 app.listen(process.env.PORT || 8000, function(){
     console.log('Your node js server is running');
